@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 960" width="1300" height="960" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="1300" height="960" fill="#ffffff"/>
+
+  <!-- ===== Paciente ===== -->
+  <rect x="40" y="150" width="290" height="272" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.8"/>
+  <path d="M40,158 a8,8 0 0 1 8,-8 h274 a8,8 0 0 1 8,8 v26 h-290 z" fill="#dcfce7"/>
+  <text x="56" y="173" font-size="16" font-weight="bold" fill="#14532d">Paciente</text>
+  <text x="314" y="173" font-size="12" fill="#14532d" text-anchor="end">pacientes</text>
+  <g font-size="13" fill="#0f172a">
+    <text x="56" y="206"><tspan font-weight="bold">_id</tspan></text>
+    <text x="56" y="226">nome</text>
+    <text x="56" y="246">cpf</text>
+    <text x="56" y="266">dataNascimento</text>
+    <text x="56" y="286">sexo: F | M | OUTRO</text>
+    <text x="56" y="306">telefone</text>
+    <text x="56" y="326">email</text>
+    <text x="56" y="346">convenio (padrão: Particular)</text>
+    <text x="56" y="366">carteirinha</text>
+    <text x="56" y="386">alergias</text>
+    <text x="56" y="406">observacoes</text>
+  </g>
+
+  <!-- ===== Consulta ===== -->
+  <rect x="430" y="110" width="380" height="526" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.8"/>
+  <path d="M430,118 a8,8 0 0 1 8,-8 h364 a8,8 0 0 1 8,8 v26 h-380 z" fill="#dbeafe"/>
+  <text x="446" y="133" font-size="16" font-weight="bold" fill="#1e3a8a">Consulta</text>
+  <text x="794" y="133" font-size="12" fill="#1e3a8a" text-anchor="end">consultas</text>
+  <g font-size="13" fill="#0f172a">
+    <text x="446" y="166" font-weight="bold">_id</text>
+    <text x="446" y="186"><tspan fill="#1d4ed8" font-weight="bold">paciente</tspan> → Paciente</text>
+    <text x="446" y="206"><tspan fill="#1d4ed8" font-weight="bold">medico</tspan> → Usuario (perfil MEDICO)</text>
+    <text x="446" y="226">inicio, fim</text>
+    <text x="446" y="246">tipo: PRIMEIRA | RETORNO</text>
+    <text x="446" y="266">status: AGENDADA | CONFIRMADA |</text>
+    <text x="446" y="284">  EM_ATENDIMENTO | REALIZADA | CANCELADA | FALTOU</text>
+    <text x="446" y="306">motivo</text>
+    <text x="446" y="326">valor, convenio</text>
+    <text x="446" y="346"><tspan fill="#1d4ed8" font-weight="bold">criadaPor</tspan> → Usuario</text>
+    <text x="446" y="366"><tspan fill="#1d4ed8" font-weight="bold">canceladaPor</tspan> → Usuario</text>
+    <text x="446" y="386">motivoCancelamento</text>
+    <text x="446" y="406">lembreteEnviado</text>
+  </g>
+  <!-- Prontuario embutido -->
+  <rect x="450" y="424" width="340" height="198" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-dasharray="5 4"/>
+  <text x="464" y="446" font-size="14" font-weight="bold" fill="#1e3a8a">prontuario <tspan font-weight="normal" font-size="12">(embutido na consulta)</tspan></text>
+  <g font-size="13" fill="#0f172a">
+    <text x="464" y="470">queixa, anamnese</text>
+    <text x="464" y="490">diagnostico</text>
+    <text x="464" y="510">conduta</text>
+    <text x="464" y="530">prescricao[ ] { medicamento, posologia }</text>
+    <text x="464" y="550">atestadoDias (0 a 15)</text>
+    <text x="464" y="570"><tspan fill="#1d4ed8" font-weight="bold">registradoPor</tspan> → Usuario</text>
+    <text x="464" y="590">registradoEm</text>
+  </g>
+
+  <!-- ===== Usuario ===== -->
+  <rect x="920" y="90" width="340" height="360" rx="8" fill="#ffffff" stroke="#9333ea" stroke-width="1.8"/>
+  <path d="M920,98 a8,8 0 0 1 8,-8 h324 a8,8 0 0 1 8,8 v26 h-340 z" fill="#f3e8ff"/>
+  <text x="936" y="113" font-size="16" font-weight="bold" fill="#581c87">Usuario</text>
+  <text x="1244" y="113" font-size="12" fill="#581c87" text-anchor="end">usuarios</text>
+  <g font-size="13" fill="#0f172a">
+    <text x="936" y="146" font-weight="bold">_id</text>
+    <text x="936" y="166">nome</text>
+    <text x="936" y="186">email (único, minúsculo)</text>
+    <text x="936" y="206">senhaHash</text>
+    <text x="936" y="226">perfil: ADMIN | MEDICO | SECRETARIA | PACIENTE</text>
+    <text x="936" y="246">telefone</text>
+    <text x="936" y="266">ativo</text>
+    <text x="936" y="290" font-size="12" font-style="italic" fill="#64748b">dados de médico</text>
+    <text x="936" y="310">crm, especialidade</text>
+    <text x="936" y="330">valorConsulta, duracaoConsulta</text>
+    <text x="936" y="350">agenda[ ] { diaSemana, inicio, fim }</text>
+    <text x="936" y="374" font-size="12" font-style="italic" fill="#64748b">vínculo de paciente</text>
+    <text x="936" y="394"><tspan fill="#7e22ce" font-weight="bold">paciente</tspan> → Paciente</text>
+  </g>
+
+  <!-- ===== Notificacao ===== -->
+  <rect x="920" y="620" width="340" height="172" rx="8" fill="#ffffff" stroke="#ea580c" stroke-width="1.8"/>
+  <path d="M920,628 a8,8 0 0 1 8,-8 h324 a8,8 0 0 1 8,8 v26 h-340 z" fill="#ffedd5"/>
+  <text x="936" y="643" font-size="16" font-weight="bold" fill="#7c2d12">Notificacao</text>
+  <text x="1244" y="643" font-size="12" fill="#7c2d12" text-anchor="end">notificacaos</text>
+  <g font-size="13" fill="#0f172a">
+    <text x="936" y="676"><tspan fill="#c2410c" font-weight="bold">usuario</tspan> → Usuario</text>
+    <text x="936" y="696">tipo, titulo</text>
+    <text x="936" y="716">mensagem</text>
+    <text x="936" y="736">lida</text>
+    <text x="936" y="756"><tspan fill="#c2410c" font-weight="bold">consulta</tspan> → Consulta</text>
+  </g>
+
+  <!-- ===== MensagemChat ===== -->
+  <rect x="920" y="820" width="340" height="112" rx="8" fill="#ffffff" stroke="#0891b2" stroke-width="1.8"/>
+  <path d="M920,828 a8,8 0 0 1 8,-8 h324 a8,8 0 0 1 8,8 v26 h-340 z" fill="#cffafe"/>
+  <text x="936" y="843" font-size="16" font-weight="bold" fill="#164e63">MensagemChat</text>
+  <text x="1244" y="843" font-size="12" fill="#164e63" text-anchor="end">mensagemchats</text>
+  <g font-size="13" fill="#0f172a">
+    <text x="936" y="876"><tspan fill="#0e7490" font-weight="bold">usuario</tspan> → Usuario</text>
+    <text x="936" y="896">autor: USUARIO | ASSISTENTE</text>
+    <text x="936" y="916">texto</text>
+  </g>
+
+  <!-- ===== relacionamentos ===== -->
+  <g stroke="#334155" stroke-width="1.8" fill="none" marker-end="url(#a)">
+    <path d="M430,182 L332,182"/>
+    <path d="M810,202 L918,202"/>
+    <path d="M1150,620 L1150,452"/>
+    <path d="M920,752 L620,752 L620,638"/>
+    <path d="M1260,872 L1284,872 L1284,270 L1262,270"/>
+    <path d="M1090,90 L1090,50 L185,50 L185,148"/>
+  </g>
+  <g stroke="#334155" stroke-width="1.5" fill="none" stroke-dasharray="6 4" marker-end="url(#a)">
+    <path d="M810,342 L918,342"/>
+    <path d="M810,362 L918,362"/>
+    <path d="M790,566 L1000,566 L1000,452"/>
+  </g>
+
+  <!-- cardinalidades -->
+  <g font-size="13" font-weight="bold" fill="#b91c1c">
+    <text x="412" y="175">N</text>
+    <text x="338" y="175">1</text>
+    <text x="818" y="195">N</text>
+    <text x="904" y="195">1</text>
+    <text x="1158" y="612">N</text>
+    <text x="1158" y="470">1</text>
+    <text x="902" y="745">N</text>
+    <text x="628" y="656">0..1</text>
+    <text x="1266" y="865">N</text>
+    <text x="1266" y="263">1</text>
+    <text x="1098" y="82">0..1</text>
+    <text x="193" y="142">0..1</text>
+    <text x="840" y="336">0..1</text>
+    <text x="1008" y="470">0..1</text>
+  </g>
+  <g font-size="12" fill="#475569">
+    <text x="640" y="42" text-anchor="middle">conta de acesso do paciente: cada ficha tem no máximo uma conta (RN01)</text>
+    <text x="822" y="386">agendou /</text>
+    <text x="822" y="402">cancelou</text>
+    <text x="1008" y="560">médico que registrou</text>
+  </g>
+
+  <!-- ===== legenda ===== -->
+  <rect x="40" y="680" width="560" height="200" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="60" y="708" font-size="15" font-weight="bold" fill="#0f172a">Como ler</text>
+  <line x1="60" y1="734" x2="110" y2="734" stroke="#334155" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="122" y="738" font-size="13" fill="#0f172a">referência obrigatória (ObjectId) para outra coleção</text>
+  <line x1="60" y1="760" x2="110" y2="760" stroke="#334155" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#a)"/>
+  <text x="122" y="764" font-size="13" fill="#0f172a">referência opcional</text>
+  <text x="60" y="790" font-size="13" fill="#0f172a"><tspan font-weight="bold" fill="#b91c1c">N / 1 / 0..1</tspan>  cardinalidade de cada lado da ligação</text>
+  <text x="60" y="816" font-size="13" fill="#0f172a">Nome à direita do título: coleção no MongoDB (banco medagenda).</text>
+  <text x="60" y="840" font-size="13" fill="#0f172a">O prontuário não é coleção: fica dentro da consulta.</text>
+  <text x="60" y="864" font-size="13" fill="#0f172a">Todas as coleções têm createdAt e updatedAt.</text>
+</svg>

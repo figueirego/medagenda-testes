@@ -27,7 +27,7 @@ O documento de cada entrega é enviado pelo Canvas. Este repositório guarda o c
 ## Estrutura
 
 ```
-docs/diagramas/   diagramas do plano (arquitetura do ambiente e estados da consulta)
+docs/diagramas/   diagramas do plano (arquitetura, estados da consulta e modelo de dados)
 tests/api/        Jest + Supertest: regras de negócio, permissões e códigos HTTP
 tests/e2e/        Playwright com Page Objects: fluxos completos pela interface
 tests/bdd/        Cucumber.js: cenários Gherkin em português
@@ -64,6 +64,8 @@ Os detalhes de instalação estão no Guia de execução do MedAgenda (material 
 ![Figura 1 – Arquitetura do ambiente de teste](docs/diagramas/figura1-arquitetura.png)
 
 ![Figura 2 – Estados da consulta (RN11)](docs/diagramas/figura2-estados-consulta.png)
+
+![Figura 3 – Modelo de dados do MedAgenda](docs/diagramas/figura3-modelo-dados.png)
 
 ## Defeitos
 
