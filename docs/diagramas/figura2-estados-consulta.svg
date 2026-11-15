@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 560" width="1300" height="560" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="1300" height="560" fill="#ffffff"/>
+
+  <!-- group: ativa antes do atendimento -->
+  <rect x="80" y="100" width="540" height="140" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="96" y="228" font-size="13" fill="#475569">consulta ativa, antes do atendimento</text>
+
+  <!-- start -->
+  <circle cx="44" cy="170" r="10" fill="#0f172a"/>
+  <line x1="54" y1="170" x2="98" y2="170" stroke="#334155" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="18" y="205" font-size="12" fill="#475569">agendar</text>
+
+  <!-- main states -->
+  <g font-size="16" font-weight="bold" text-anchor="middle">
+    <rect x="100" y="130" width="180" height="80" rx="40" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="190" y="176" fill="#1e3a8a">Agendada</text>
+
+    <rect x="420" y="130" width="180" height="80" rx="40" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="510" y="176" fill="#1e3a8a">Confirmada</text>
+
+    <rect x="740" y="130" width="180" height="80" rx="40" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+    <text x="830" y="176" fill="#713f12">Em atendimento</text>
+
+    <rect x="1060" y="130" width="180" height="80" rx="40" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+    <rect x="1066" y="136" width="168" height="68" rx="34" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="1150" y="176" fill="#14532d">Realizada</text>
+  </g>
+
+  <!-- main transitions -->
+  <g stroke="#334155" stroke-width="1.8" fill="none" marker-end="url(#a)">
+    <line x1="280" y1="170" x2="418" y2="170"/>
+    <line x1="600" y1="170" x2="738" y2="170"/>
+    <line x1="920" y1="170" x2="1058" y2="170"/>
+  </g>
+  <g font-size="14" fill="#0f172a" text-anchor="middle">
+    <text x="350" y="62" font-weight="bold">confirmar</text>
+    <text x="350" y="81">(recepção)</text>
+    <text x="670" y="62" font-weight="bold">iniciar atendimento</text>
+    <text x="670" y="81">(médico da consulta, só no dia)</text>
+    <text x="990" y="62" font-weight="bold">finalizar</text>
+    <text x="990" y="81">(exige prontuário com diagnóstico)</text>
+  </g>
+
+  <!-- side states -->
+  <g font-size="16" font-weight="bold" text-anchor="middle">
+    <rect x="130" y="380" width="180" height="80" rx="40" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+    <rect x="136" y="386" width="168" height="68" rx="34" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="220" y="426" fill="#7f1d1d">Cancelada</text>
+
+    <rect x="410" y="380" width="180" height="80" rx="40" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <rect x="416" y="386" width="168" height="68" rx="34" fill="none" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="500" y="426" fill="#7c2d12">Faltou</text>
+  </g>
+  <g stroke="#334155" stroke-width="1.8" fill="none" marker-end="url(#a)">
+    <line x1="220" y1="240" x2="220" y2="378"/>
+    <line x1="500" y1="240" x2="500" y2="378"/>
+  </g>
+  <g font-size="13" fill="#0f172a">
+    <text x="230" y="290" font-weight="bold">cancelar, com motivo</text>
+    <text x="230" y="308">recepção a qualquer momento;</text>
+    <text x="230" y="326">paciente até 24 h antes (RN12)</text>
+    <text x="510" y="290" font-weight="bold">registrar falta</text>
+    <text x="510" y="308">recepção, depois do</text>
+    <text x="510" y="326">horário marcado</text>
+  </g>
+
+  <!-- legend -->
+  <rect x="760" y="330" width="480" height="196" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="780" y="360" font-size="15" font-weight="bold" fill="#0f172a">Como ler</text>
+  <rect x="780" y="378" width="60" height="30" rx="15" fill="#fff" stroke="#334155" stroke-width="2"/>
+  <rect x="784" y="382" width="52" height="22" rx="11" fill="none" stroke="#334155" stroke-width="1.2"/>
+  <text x="854" y="398" font-size="13" fill="#0f172a">estado final: nenhuma ação o altera</text>
+  <text x="780" y="436" font-size="13" fill="#0f172a">Qualquer transição fora das setas deve ser recusada</text>
+  <text x="780" y="456" font-size="13" fill="#0f172a">pela API (violação de regra de negócio → 422, RNF01).</text>
+  <text x="780" y="486" font-size="13" fill="#475569">Casos de teste: caminho válido + tentativas a partir</text>
+  <text x="780" y="504" font-size="13" fill="#475569">de Realizada, Cancelada e Faltou (seção 9.4).</text>
+</svg>

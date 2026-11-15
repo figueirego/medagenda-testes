@@ -1,0 +1,10 @@
+node_modules/
+.env
+# código do sistema fornecido pelo professor (não versionado aqui)
+medagenda/
+# relatórios gerados pelas ferramentas
+test-results/
+playwright-report/
+reports/
+coverage/
+.DS_Store
